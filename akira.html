@@ -1,0 +1,252 @@
+<!--The content of this file is the same with spiritedaway.html, yourname.html and paprika.html
+   The documetation of this html applied to the above html file. -->
+
+<!--Visit films_detail.css and films_detail.js for style of functions of this html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="css/films_detail.css">
+  <link rel="stylesheet" type="text/css" href="css/menu.css">
+  <link rel="stylesheet" type="text/css" href="css/footer.css">
+  <link rel="stylesheet" type="text/css" href="css/scroll.css">
+  <link rel="stylesheet" type="text/css" href="css/akira.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2|Noto+Sans+JP&display=swap" rel="stylesheet">
+  <title>Akira</title>
+  <!--  W3.JS is a JavaScript library designed to simplify web development projects: -->
+  <script src="https://www.w3schools.com/lib/w3.js" type="text/javascript"></script>
+  <script type="text/javascript" src="js/menu.js"></script>
+
+</head>
+
+<!--Function initializeCommentDiv() will initialize the divs that responsiable for comment functions-->
+
+<body onresize="resize()" onload="w3.includeHTML(); initializeCommentDiv();">
+  <div id="flex-container">
+    <div w3-include-html="menu.html"></div>
+  </div>
+
+  <!--  #banner stylise html with background image-->
+  <section id="banner">
+
+    <!--      let user go back to page top when clicked-->
+    <button id="backToTop" onclick="location.href='#';"><a href="#">&#8682;</a></button>
+
+    <!--    .banner-content is the flex container for .poster-container, .film-heading, .preview-->
+    <div class="banner-content">
+
+      <!--      this contains poster image for the film-->
+      <div class="poster-container">
+        <img src="image/movie1Poster.jpg" alt="" id="poster">
+      </div>
+
+      <!--     this contain film title, year, genre, rating and purchase site of the film-->
+      <div class="film-heading">
+        <h1 class="title">Akira</h1>
+        <h3 id="year">(1988)</h3>
+        <h2>Sci-Fi / Cyberpunk</h2>
+        <h3><a href="https://www.imdb.com/title/tt0094625/" target="_blank"><span class="imdb rating">IMDb</span></a>8.2 / 10</h3>
+        <h3><a href="https://www.rottentomatoes.com/m/akira" target="_blank"><span class="rotten rating">Rotten Tomatoes</span></a>90%
+        </h3>
+        <h2>Get this on:</h2>
+        <a href="https://itunes.apple.com/gb/movie/akira/id1237431864" target="_blank"><span class="apple buy">iTunes</span></a>
+        <br>
+        <a href="https://www.amazon.com/Akira-Movie-Blu-ray-DVD-Combo/dp/B00ENNA62W" target="_blank"><span
+            class="amazon buy">Amazon</span></a>
+      </div>
+
+      <!--      this contain film trailer, images of the film-->
+      <div class="preview">
+
+        <iframe width="95%" height="350" src="https://www.youtube.com/embed/ooKBenGK3R4" frameborder="0"
+          allowfullscreen></iframe>
+
+        <!--        This is image slide show, image can be enlarge when clicked-->
+        <div class="img-flex-container">
+
+          <!--          button to scroll left-->
+          <div id="pre" onclick="pre();">
+            <p>&#9664;</p>
+          </div>
+
+          <!--        This is the gallery of movie image-->
+          <div id="image-box">
+
+            <!--             function enlarge() will display div#cover and image#large to enlarge the image-->
+            <img src="image/akira2.jpg" alt="" onclick="enlarge(this);">
+            <img src="image/akira3.jpg" alt="" onclick="enlarge(this);">
+            <img src="image/akira4.jpg" alt="" onclick="enlarge(this);">
+          </div>
+
+          <!--          button to scroll right-->
+          <div id="next" onclick="next();">
+            &#9654;
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <hr>
+
+    <!--   This contains Introduction and main cast of movie-->
+    <div id="detail-container">
+      <details>
+        <summary>Introduction</summary>
+        <p>Set in a dystopian 2019, Akira tells the story of Shōtarō Kaneda, a leader of a biker gang whose childhood
+          friend, Tetsuo Shima, acquires incredible telekinetic abilities after a motorcycle accident, eventually
+          threatening an entire military complex amidst chaos and rebellion in the sprawling futuristic metropolis of
+          Neo-Tokyo. While most of the character designs and settings were adapted from the manga, the plot differs
+          considerably and does not include much of the last half of the manga. The soundtrack, which draws heavily from
+          traditional Indonesian gamelan as well as Japanese noh music, was composed by Shōji Yamashiro and performed by
+          Geinoh Yamashirogumi.</p>
+      </details>
+
+      <details>
+        <summary>Crews</summary>
+        <table>
+          <tr>
+            <th>Director</th>
+          </tr>
+          <tr>
+            <td>Katsuhiro Otomo</td>
+          </tr>
+        </table>
+        <br><br>
+        <table>
+          <tr>
+            <th>Main Cast</th>
+          </tr>
+          <tr>
+            <td>Mitsuo Iwata</td>
+          </tr>
+          <tr>
+            <td>Nozomu Sasaki</td>
+          </tr>
+          <tr>
+            <td>Mami Koyama</td>
+          </tr>
+          <tr>
+            <td>Taro Ishida</td>
+          </tr>
+          <tr>
+            <td>Mizuho Suzuki</td>
+          </tr>
+
+        </table>
+      </details>
+    </div>
+
+    <hr>
+
+    <!--      This contains the comments and a text editor for commenters.-->
+    <div id="comment-section">
+
+      <!--     This div let user stylise and submit comment -->
+      <div class="write">
+
+        <!--       this div let user edit text in different ways-->
+        <div id="editor-container">
+          <button onclick="bold(); return false;" id="bold"><b>B</b></button>
+          <button onclick="italic(); return false;"><i>I</i></button>
+          <select name="font-chooser" id="font-chooser" onclick="fontsize();">
+            <option value="20">20</option>
+            <option value="22">22</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="28">28</option>
+            <option value="30">30</option>
+            <option value="32">32</option>
+            <option value="34">34</option>
+            <option value="36">36</option>
+          </select>
+          <input type="color" id="color-panel" onchange=" change();">
+          <button onclick="left(); return false;" id="left">Left</button>
+          <button onclick="middle(); return false;" id="center">Center</button>
+          <button onclick="right(); return false;" id="right">Right</button>
+        </div>
+
+        <!--       This div let user input Commentor's name and title of the comment-->
+        <div class="review_info">
+          <label for="input1">Name:</label> <input type="text" id="input1" name="userName">
+          <br>
+          <label for="input2">Title:</label> <input type="text" id="input2" name="title">
+        </div>
+
+        <!--       The textarea and the submit button-->
+        <div class="textblock">
+
+          <!--Since textarea is not for rich text editing, 
+          we need to copy the style and the content of the textarea
+           to the div#a using function copy()-->
+          <textarea id="comment" oninput="copy();" placeholder="We would love to hear!"></textarea>
+          <button onclick="submit();" id="Submit_button">Submit</button>
+        </div>
+
+      </div>
+
+      <!--     This let user browse comment about the film-->
+      <div id="browse-comment">
+        <div class="review">
+          <div class="author">landreeshahid</div>
+          <div class="review-title">Scary.... American remakers That Is!</div>
+          <div>Akira is great. I have been watching ot every years for 30 years or so and honestly it still holds up,
+            One has to watch it more than once to get it. The ride is well worth it. Scary part is the Hollywood remake
+            machine has found it. I cannot wait for the toned down, dumbed down, gender switch, franchise standard
+            one-liners and fat twerking tattooed American 'women' to make an Appearance. And I am an American! Sigh!
+          </div>
+        </div>
+
+        <div class="review">
+          <div class="author">roviovvsd</div>
+          <div class="review-title">Neo Tokyo Is Out of This World</div>
+          <div>Akira is fun, intriguing, violent and original. Beyond that this anime is famously the first, and a very
+            early example, of an animation with completely matching and synchronous mouth movements for all the
+            characters, which is an achievement for the fictitious and full-length feature. They are remaking this in
+            Hollywood. I have owned a DVD of Akira for two decades and watch it every year. I will not be attending the
+            American 'Akira.'
+          </div>
+        </div>
+
+        <div class="review">
+          <div class="author">Rlo1234</div>
+          <div class="review-title">It Is Violent</div>
+          <div>So i love it! Not the usual. The story is complex and condensed for the sake of the movie and as such
+            hard to understand. I recommend reading the source material first. Imagine how bad an American remake would
+            be if they messed up Ghost In The Shell that much!!
+          </div>
+        </div>
+
+        <!--        This invisible div store the user comment 
+           and display it when user submit the comment -->
+        <div id="invisible">
+          <div id="authorA"></div>
+          <div id="review-titleA"></div>
+          <!--          this div store copied text and style of textarea-->
+          <div id="a"></div>
+        </div>
+        <br>
+      </div>
+    </div>
+
+  </section>
+  <footer id="footer">
+    <p>@For Assignment: Hugo Clark IVE ITP3006 19-20</p>
+    <p id="p2">Recommended screen resolution: 1366x768</p>
+  </footer>
+
+  <!--  This div show enlarged image of movie when user click image in the gallery-->
+  <div id="cover"><img src="" alt="" id="large"><span class="cancel" onclick="disappear();">X</span></div>
+
+  <script type="text/javascript" src="js/scroll.js"></script>
+  <script type="text/javascript" src="js/films_detail.js"></script>
+
+</body>
+
+</html>

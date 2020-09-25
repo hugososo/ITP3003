@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8"> <!-- auto-generate, to tell browser what charset we use-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- auto-generate, for different device use -->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge"> <!-- auto-generate, set IE compatibility-->
+  <!-- Website Css file insert-->
+  <link rel="stylesheet" type="text/css" href="css/index.css">
+  <link rel="stylesheet" type="text/css" href="css/menu.css">
+  <link rel="stylesheet" type="text/css" href="css/footer.css">
+  <link rel="stylesheet" type="text/css" href="css/scroll.css">
+  <!-- online fonts insert-->
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2|Noto+Sans+JP&display=swap" rel="stylesheet">
+  <title>Japanese Animated Movie Club</title>
+  <!--Website Js file insert-->
+  <script src="https://www.w3schools.com/lib/w3.js" type="text/javascript"></script>
+</head>
+
+<script type="text/javascript" src="js/menu.js"></script>
+
+<body onresize="resize()" onload="w3.includeHTML();">
+  <!-- resize() in the menu.js, w3.includeHTML() is other js library-->
+  <div id="flex-container">
+    <!-- the whole page is contain in this div -->
+    <div w3-include-html="menu.html"></div> <!-- insert menu.html in this page-->
+    <section>
+      <div class="intro-container">
+        <div class="title">
+          <h1 id="t1">Japanese</h1>
+          <h1 id="t2">Animated</h1>
+          <h1 id="t3">Movie</h1>
+          <h1 id="t4">Club</h1>
+        </div>
+        <div class="subtitle">
+          <h2>Movie Lover<br>let's join our big family</h2>
+        </div>
+        <div class="joinbtn">
+          <a href="register.html"><button type="button">Join Now!</button></a>
+          <!-- the button linked to register.html-->
+        </div>
+      </div>
+
+      <div class="slide-container">
+        <div class="recorder">
+          <img src="image/recorder.png" alt="Recommended Movie">
+        </div>
+
+        <div class="slide appear">
+          <!-- two class name: slide, appear-->
+          <img src="image/movie1.jpg" alt="Akira">
+          <div class="overlay">
+            <div class=viewbtn><a href="akira.html"><button type="button">View More</button></a></div>
+          </div>
+          <div class="text">Akira(1988)<br />A secret military project endangers Neo-Tokyo when it turns a biker gang
+            member into a rampaging psychic psychopath who can only be stopped by two teenagers and a group of psychics.
+          </div>
+        </div>
+
+        <div class="slide appear">
+          <img src="image/movie2.jpg" alt="Paprika" width="600vw">
+          <div class="overlay">
+            <div class=viewbtn><a href="paprika.html"><button type="button">View More</button></a></div>
+          </div>
+          <div class="text">Paprika(2006)<br />When a machine that allows therapists to enter their patients' dreams is
+            stolen, all Hell breaks loose. Only a young female therapist, Paprika, can stop it.</div>
+        </div>
+
+        <div class="slide appear">
+          <img src="image/movie3.jpg" alt="Your name" width="600vw">
+          <div class="overlay">
+            <div class=viewbtn><a href="yourname.html"><button type="button">View More</button></a></div>
+          </div>
+          <div class="text">Kimi no na wa(2016)<br />Two strangers find themselves linked in a bizarre way. When a
+            connection forms, will distance be the only thing to keep them apart?</div>
+        </div>
+
+        <div class="slide appear">
+          <img src="image/movie4.jpg" alt="Spirited Away" width="600vw">
+          <div class="overlay">
+            <div class=viewbtn><a href="spiritedaway.html"><button type="button">View More</button></a></div>
+          </div>
+          <div class="text">Sen to Chihiro no kamikakushi(2001)<br />During her family's move to the suburbs, a sullen
+            10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into
+            beasts.</div>
+        </div>
+        <script type="text/javascript" src="js/slide.js"></script>
+        <a class="prev" onclick="calSlide(-1)">&#9668;</a> <!-- slide.js function: calSlide()-->
+        <a class="next" onclick="calSlide(1)">&#9658;</a>
+      </div>
+    </section>
+
+    <div w3-include-html="footer.html"></div> <!-- insert footer.html in this page-->
+
+    <script type="text/javascript" src="js/scroll.js"></script>
+    <button id="backToTop" onclick="location.href='#top';"><a href="#top">&#8682;</a></button>
+  </div>
+</body>
+
+</html>

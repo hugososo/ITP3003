@@ -1,0 +1,200 @@
+<!--This file is the same with akira.html except poster and pictures
+  For documentation, please check akira.html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="css/films_detail.css">
+  <link rel="stylesheet" type="text/css" href="css/menu.css">
+  <link rel="stylesheet" type="text/css" href="css/footer.css">
+  <link rel="stylesheet" type="text/css" href="css/scroll.css">
+  <link rel="stylesheet" type="text/css" href="css/yourname.css">
+
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2|Noto+Sans+JP&display=swap" rel="stylesheet">
+  <title>Your Name</title>
+  <!--  W3.JS is a JavaScript library designed to simplify web development projects: -->
+  <script src="https://www.w3schools.com/lib/w3.js" type="text/javascript"></script>
+  <script type="text/javascript" src="js/menu.js"></script>
+
+</head>
+
+<body onresize="resize()" onload="w3.includeHTML(); initializeCommentDiv();">
+
+  <div id="flex-container">
+    <div w3-include-html="menu.html"></div>
+  </div>
+  <section id="banner">
+    <button id="backToTop" onclick="location.href='#';"><a href="#">&#8682;</a></button>
+    <div class="banner-content">
+      <div class="poster-container"><img src="image/movie3Poster.jpg" alt="" id="poster"></div>
+
+      <div class="film-heading">
+        <h1 class="title">Your Name</h1>
+        <h3 id="year">(2016)</h3>
+        <h2>Animation / Drama / Fantasy </h2>
+        <h3><a href="https://www.imdb.com/title/tt5311514/"><span class="imdb rating">IMDb</span></a>8.4 / 10</h3>
+        <h3><a href="https://www.rottentomatoes.com/m/your_name_2017"><span class="rotten rating">Rotten
+              Tomatoes</span></a>98%</h3>
+        <h2>Get this on:</h2>
+        <a href="https://itunes.apple.com/hk/movie/your-name/id1269480366?l=en"><span
+            class="apple buy">iTunes</span></a>
+        <br>
+        <a href="https://www.amazon.com/Your-Name-Blu-ray-Michael-Sinterniklaas/dp/B074R4KSTM"><span
+            class="amazon buy">Amazon</span></a>
+      </div>
+      <div class="preview">
+        <iframe width="95%" height="350" src="https://www.youtube.com/embed/QdiXYMYDhNA" frameborder="0"
+          allowfullscreen></iframe>
+
+        <div class="img-flex-container">
+          <div id="pre" onclick="pre();">
+            <p>&#9664;</p>
+          </div>
+          <div id="image-box">
+            <img src="image/yourname2.jpg" alt="" onclick="enlarge(this);">
+            <img src="image/yourname3.jpg" alt="" onclick="enlarge(this);">
+            <img src="image/yourname4.jpg" alt="" onclick="enlarge(this);">
+          </div>
+          <div id="next" onclick="next();">
+            &#9654;
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <hr>
+
+    <div id="detail-container">
+      <details>
+        <summary>Introduction</summary>
+        <p>From director Makoto Shinkai, the innovative mind behind Voices of a Distant Star and 5 Centimeters Per
+          Second, comes a beautiful masterpiece about time, the thread of fate, and the hearts of two young souls. The
+          day the stars fell, two lives changed forever. High schoolers Mitsuha and Taki are complete strangers living
+          separate lives. But one night, they suddenly switch places. Mitsuha wakes up in Taki's body, and he in hers.
+          This bizarre occurrence continues to happen randomly, and the two must adjust their lives around each other.
+          Yet, somehow, it works. They build a connection and communicate by leaving notes, messages, and more
+          importantly, an imprint. When a dazzling comet lights up the night's sky, something shifts, and they seek each
+          other out wanting something more-a chance to finally meet. But try as they might, something more daunting than
+          distance prevents them. Is the string of fate between Mitsuha and Taki strong enough to bring them together,
+          or will forces outside their control leave them forever separated?</p>
+      </details>
+
+      <details>
+        <summary>Crews</summary>
+        <table>
+          <tr>
+            <th>Director</th>
+          </tr>
+          <tr>
+            <td>Makoto Shinkai</td>
+          </tr>
+        </table>
+        <br><br>
+        <table>
+          <tr>
+            <th>Main Cast</th>
+          </tr>
+          <tr>
+            <td>Ryûnosuke Kamiki</td>
+          </tr>
+          <tr>
+            <td>Michael Sinterniklaas</td>
+          </tr>
+          <tr>
+            <td>Mone Kamishiraishi</td>
+          </tr>
+          <tr>
+            <td>Stephanie Sheh</td>
+          </tr>
+          <tr>
+            <td>Masami Nagasawa</td>
+          </tr>
+
+        </table>
+      </details>
+    </div>
+
+    <hr>
+
+    <div id="comment-section">
+      <div class="write">
+        <div id="editor-container">
+          <button onclick="bold(); return false;" id="bold"><b>B</b></button>
+          <button onclick="italic(); return false;"><i>I</i></button>
+          <select name="font-chooser" id="font-chooser" onclick="fontsize();">
+            <option value="20">20</option>
+            <option value="22">22</option>
+            <option value="24">24</option>
+            <option value="25">25</option>
+            <option value="26">26</option>
+            <option value="28">28</option>
+            <option value="30">30</option>
+            <option value="32">32</option>
+            <option value="34">34</option>
+            <option value="36">36</option>
+          </select>
+          <input type="color" id="color-panel" onchange=" change();">
+          <button onclick="left(); return false;" id="left">Left</button>
+          <button onclick="middle(); return false;" id="center">Center</button>
+          <button onclick="right(); return false;" id="right">Right</button>
+        </div>
+
+        <div class="review_info">
+          <label for="input1">Name:</label> <input type="text" required id="input1" name="userName">
+          <br>
+          <label for="input2">Title:</label> <input type="text" required id="input2" name="title">
+        </div>
+
+        <div class="textblock">
+          <textarea id="comment" oninput="copy();" placeholder="We would love to hear!"></textarea>
+          <button onclick="submit();" id="Submit_button">Submit</button>
+        </div>
+
+      </div>
+
+      <div id="browse-comment">
+        <div class="review">
+          <div class="author">twf-37243</div>
+          <div class="review-title">One of the greatest human stories ever...</div>
+          <div>From an anime nonetheless.
+            <br>
+            Much has been said about this great animation and most of it is true. It is beautiful, tender, modern (watch
+            the film and you will understand) and makes human love interesting again.</div>
+        </div>
+
+        <div class="review">
+          <div class="author">bup-53144</div>
+          <div class="review-title">A Beautiful Heartwarming Story - With A Social Conscience</div>
+          <div>In a world dominated by stupid sequels, prequels and remakes it is film/anime like this that restores
+            hope in today's entertainment.
+          </div>
+        </div>
+
+        <div class="review">
+          <div class="author">JanePhilpot</div>
+          <div class="review-title">The Japanese Sure Know How To Unleash</div>
+          <div>Beauty, Mystery and Creativity, don't they?
+            <br>
+            I am scared for the day Jar Jar Abrams and Kathleen Kennedy get hold of this and make the hero a Disney
+            princess and bore all our pants off.</div>
+        </div>
+        <div id="invisible">
+          <div id="authorA"></div>
+          <div id="review-titleA"></div>
+          <div id="a"></div>
+        </div>
+        <br>
+      </div>
+    </div>
+  </section>
+  <div w3-include-html="footer.html"></div>
+  <div id="cover"><img src="" alt="" id="large"><span class="cancel" onclick="disappear();">X</span></div>
+  <script type="text/javascript" src="js/scroll.js"></script>
+  <script type="text/javascript" src="js/films_detail.js"></script>
+
+</body>
+
+</html>

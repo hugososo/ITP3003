@@ -1,0 +1,16 @@
+#footer {
+    /* make the text go left and right */
+    display: flex;
+    background-color: black;
+    justify-content: space-between;
+}
+
+#footer p {
+    margin: 0;
+    color: white;
+    font-size: 1vh;
+}
+
+#p2 {
+    padding-right: 5px;
+}

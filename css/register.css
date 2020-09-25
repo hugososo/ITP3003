@@ -1,0 +1,346 @@
+/* This file stylise register.html */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Baloo Chettan 2', cursive;
+  user-select: none;
+}
+
+#flex-container {
+  display: flex;
+  flex-flow: column;
+}
+
+/* Section Part */
+
+section {
+  background-image: url('../image/bg2.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}
+
+/* class for header outside the form */
+.intro_text {
+  margin-left: 50px;
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.intro_text:hover {
+  font-style: italic;
+}
+
+h1.intro_text {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+/* class for header outside the form ----------end--------------------*/
+
+
+/* class for the whole form */
+#joinclub {
+  margin: auto;
+  width: 90%;
+  border: 3px solid rgba(19, 17, 17, 0.541);
+  border-radius: 3px;
+  text-align: center;
+  background-color: rgba(19, 17, 17, 0.541);
+}
+
+/* class for form header */
+div.header {
+  background-color: black;
+  font-size: 40px;
+  color: white;
+}
+
+
+/* stylize all label */
+#joinclub label {
+  color: white;
+  font-size: 25px;
+  display: inline-block;
+  width: 28%;
+  text-align: right;
+  margin-right: 20px;
+}
+
+/* format '*' character */
+#joinclub label span.required {
+  color: red;
+  font-size: 30px;
+}
+
+/****************** stylize normal input field ************/
+#joinclub input {
+  color: white;
+  border: none;
+  border-bottom: 1px dashed lightblue;
+  background-color: transparent;
+  padding: 10px;
+  margin: 5px 0px;
+  font-size: 25px;
+  text-align: center;
+}
+
+#joinclub input:focus {
+  text-align: center;
+}
+
+#joinclub input:hover,
+#joinclub input:focus {
+  outline: none;
+  border-bottom: 1px solid lightblue;
+  border-radius: 3px;
+  background-color: rgba(7, 7, 7, 0.5);
+}
+
+/* stylize normal input field --------end-------------- */
+
+
+/* stylize reminder message for ID and password field */
+#userIdreminder,
+#pwreminder,
+#rePwreminder,
+#isSame {
+  display: none;
+  width: 80%;
+  background-color: red;
+  margin: auto;
+  color: white;
+  font-size: 20px;
+}
+
+/* format label for Sex field */
+#joinclub label.gender {
+  width: 120px;
+}
+
+.gendercol {
+  width: 99%;
+  margin: 0;
+  display: inline-block;
+  align-items: center;
+}
+
+/* custom radio button */
+input[type="radio"] {
+  display: none;
+}
+
+input[type="radio"]+label span {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  border-radius: 100%;
+  display: inline-block;
+  cursor: pointer;
+  background-color: white;
+  margin: 0px 10px;
+  border: 5px solid white;
+}
+
+input[type="radio"]+label span:hover {
+  background-color: rgba(117, 112, 115, 0.527);
+  border: 5px solid rgba(117, 112, 115, 0.527);
+}
+
+input[type="radio"]+label:hover {
+  cursor: pointer;
+}
+
+input[type="radio"]+label:hover>span {
+  background-color: rgba(117, 112, 115, 0.527);
+  border: 5px solid rgba(117, 112, 115, 0.527);
+}
+
+input[type="radio"]:checked+label span {
+  border: 5px solid;
+  background-color: #e58f05;
+}
+
+/*-- custom radio button ----end------ */
+
+/* stylize placeholder text */
+#joinclub ::placeholder {
+  color: rgba(34, 233, 233, 0.377);
+  text-align: center;
+}
+
+#joinclub input:focus::-webkit-input-placeholder {
+  color: transparent;
+}
+
+/* stylize placeholder text -------end-------------- */
+
+
+/* contains checkbox list and the button */
+#checkbox-container {
+  width: 90%;
+  margin: auto;
+}
+
+/* button to show collapsed checkbox */
+#collapseCheck {
+  background-color: white;
+  width: 90%;
+  margin: auto;
+  margin-top: 15px;
+  border-radius: 5px;
+  font-size: 30px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#collapseCheck:hover {
+  color: white;
+  background-color: rgba(117, 112, 115, 0.527);
+}
+
+/* button to show collapsed checkbox --------end-------------- */
+
+
+#checkboxlist {
+  display: none;
+  list-style: none;
+  font-size: 25px;
+  margin-bottom: 20px;
+}
+
+/* custom checkbox */
+input[type="checkbox"] {
+  display: none;
+}
+
+.newCheckbox {
+  width: 20px;
+  height: 20px;
+  padding-bottom: 8px;
+  padding-right: 4px;
+  padding-left: 4px;
+  margin-right: 10px;
+  margin-top: 8px;
+  font-weight: bold;
+  background-color: white;
+  color: transparent;
+  transition: all 0.3s;
+  display: block;
+}
+
+input[type="checkbox"]:checked+label span {
+  background-color: rgb(87, 59, 84);
+  color: rgba(107, 222, 218, 0.9);
+  font-size: 22px;
+}
+
+.newCheckbox:hover {
+  background-color: rgba(135, 147, 126, 0.69);
+}
+
+#joinclub label.box-label {
+  display: flex;
+  color: deeppink;
+  cursor: pointer;
+  margin-left: 100px;
+}
+
+#joinclub label.box-label:hover .newCheckbox {
+  background-color: rgba(135, 147, 126, 0.69);
+}
+
+/* custom checkbox--------------end------------------*/
+
+
+/* stylise submit and reset button */
+div.button-spacing {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+div.button-spacing button {
+  font-family: 'Baloo Chettan 2', cursive;
+  font-size: 20px;
+  color: rgb(153, 109, 7);
+  padding: 5px 10px;
+  background-color: rgb(7, 1, 24);
+  box-shadow: 3px 3px rgba(27, 1, 17, 0.884);
+  border: none;
+  border-radius: 6px;
+  margin-top: 15px;
+  margin-bottom: 25px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+div.button-spacing button:hover {
+  transform: translate(3px, 3px);
+  background-color: rgba(117, 112, 115, 0.527);
+  box-shadow: none;
+  color: white;
+}
+
+/*---------------end---------------------------*/
+
+
+/***break point ****  to prevent text overlap ******/
+@media only screen and (max-width: 908px) {
+  #joinclub {
+    width: 99%;
+    margin-bottom: 0;
+    border: 0;
+  }
+
+  form#joinclub label {
+    display: block;
+    text-align: center;
+    font-size: 30px;
+    width: 100%;
+  }
+
+  form#joinclub label.gender {
+    display: block;
+    width: 100%;
+  }
+
+  section h1.intro_text {
+    font-size: 5vw;
+  }
+
+  section h2.intro_text {
+    font-size: 3vw;
+  }
+
+  section div.header {
+    padding-top: 20px;
+    font-size: 35px;
+    margin-bottom: 20px;
+  }
+
+  #joinclub input {
+    width: 80%;
+  }
+
+  #collapseCheck {
+    width: 90%;
+  }
+
+  #joinclub label.box-label {
+    margin-left: 0;
+  }
+
+  .gendercol {
+    margin: 0;
+  }
+}

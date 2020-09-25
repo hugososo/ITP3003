@@ -1,0 +1,28 @@
+#backToTop {
+  background-color: black;
+  position: fixed;
+  top: 80%;
+  right: 0%;
+  width: 60px;
+  height: 60px;
+  border: none;
+  border-radius: 100%;
+  margin-right: 10px;
+  margin-bottom: 40px;
+  cursor: pointer;
+  transition: 0.2s;
+  opacity: 0.6;
+  outline: none;
+  display: none;
+}
+
+#backToTop a {
+  font-size: 30px;
+  text-decoration: none;
+  color: white;
+}
+
+#backToTop:hover {
+  background-color: rgba(108, 78, 117, 0.356);
+  transform: scale(1.1);
+}

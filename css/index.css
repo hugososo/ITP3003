@@ -1,0 +1,274 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Baloo Chettan 2', cursive;
+    user-select: none;
+}
+
+#flex-container {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Section Part */
+
+section {
+    background-image: url('../image/bg3.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+    /* prevent the blank in the large screen*/
+}
+
+/* Intro Part */
+.intro-container {
+    margin: 4vw 3vw 3vw 6vw;
+    border: 2px dotted rgb(255, 255, 255);
+    width: 35vw;
+    float: left;
+    color: white;
+}
+
+.title {
+    margin-left: 2vw;
+    letter-spacing: 0.2vw;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+
+.title h1 {
+    margin: 0;
+}
+
+#t1 {
+    font-size: 4vw;
+    text-shadow: 2px 0px 4px rgb(0, 0, 0);
+}
+
+#t2,
+#t3,
+#t4 {
+    font-size: 3.5vw;
+    text-shadow: 2px 0px 4px rgb(0, 0, 0);
+}
+
+#t1::first-letter,
+#t2::first-letter,
+#t3::first-letter,
+#t4::first-letter {
+    font-size: 4.5vw;
+}
+
+.subtitle {
+    margin-left: 2vw;
+}
+
+.subtitle h2 {
+    font-size: 2vw;
+    text-shadow: 2px 0px 4px rgb(0, 0, 0);
+}
+
+.joinbtn {
+    margin: 0vw 0vw 2vw 2vw;
+}
+
+.joinbtn button {
+    font-family: 'Baloo Chettan 2', cursive;
+    background-color: orange;
+    border: none;
+    padding: 1vw 3vw;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    letter-spacing: 0.2vw;
+    font-size: 1.15vw;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    outline: none;
+}
+
+.joinbtn button:hover {
+    background-color: rgb(255, 110, 52);
+}
+
+/* Slide container */
+.recorder {
+    position: absolute;
+    z-index: 1;
+    top: 10%;
+    left: -10%;
+    transform: rotate(20deg);
+}
+
+.recorder img {
+    width: 15%;
+    opacity: 0.9;
+}
+
+/* slide-container position relative for the prev and next position absolute */
+.slide-container {
+    width: 45%;
+    min-height: 43vw;
+    position: relative;
+    margin: 4vw 0vw 3vw 2.85vw;
+    float: left;
+}
+
+/* slide position relative for the overlay position absolute */
+.slide {
+    position: relative;
+}
+
+.slide img {
+    display: block;
+    width: 100%;
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    height: 0;
+    /* set height to 0 to make a scroll effect*/
+    width: 100%;
+    background-color: rgb(0, 0, 0, 0.7);
+    overflow: hidden;
+    /* to hide the elements(button) if the overlay height is 0*/
+    transition: 0.5s ease;
+    /* center the button */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide:hover .overlay {
+    bottom: 0;
+    height: 100%;
+}
+
+.viewbtn button {
+    font-family: 'Baloo Chettan 2', cursive;
+    background-color: rgb(191, 255, 244);
+    border: none;
+    padding: 1vw 6vw;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    letter-spacing: 0.2vw;
+    font-size: 1vw;
+    font-weight: lighter;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    outline: none;
+}
+
+.viewbtn button:hover {
+    background-color: rgb(37, 207, 168);
+    color: white;
+}
+
+.text {
+    background-color: rgb(0, 0, 0, 0.7);
+    font-size: 1.5vw;
+    padding: 0px 10px 10px 10px;
+    text-align: justify;
+    color: rgb(255, 255, 255);
+}
+
+.prev,
+.next {
+    cursor: pointer;
+    position: absolute;
+    top: 45%;
+    padding: 1vw;
+    color: rgb(255, 255, 255);
+    font-size: 1.3vw;
+    transition: 0.3s ease-out;
+    user-select: none;
+}
+
+.next {
+    right: 0;
+}
+
+.prev:hover,
+.next:hover {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* create a css animation for fade-in-out*/
+.appear {
+    animation: appear 0.5s ease-in-out;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0.5;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+
+/* Media Queries for tiny screen */
+@media only screen and (max-width : 960px) {
+    .intro-container {
+        width: 87%;
+    }
+
+    .title h1 {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    #t1 {
+        font-size: 40pt;
+    }
+
+    #t2,
+    #t3,
+    #t4 {
+        font-size: 35pt;
+    }
+
+    .subtitle {
+        display: flex;
+        justify-content: center;
+    }
+
+    .subtitle h2 {
+        font-size: 16pt;
+    }
+
+    .joinbtn {
+        display: flex;
+        justify-content: center;
+    }
+
+    .slide-container {
+        width: 88%;
+        margin: 4vw 6vw;
+    }
+
+    .prev,
+    .next {
+        padding: 10px;
+        color: rgb(255, 255, 255);
+        font-size: 14pt;
+        transition: 0.3s ease-out;
+        user-select: none;
+    }
+
+    .viewbtn button {
+        padding: 1vw 6vw;
+        letter-spacing: 0.2vw;
+        font-size: 10pt;
+    }
+}

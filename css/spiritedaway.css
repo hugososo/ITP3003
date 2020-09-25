@@ -1,0 +1,11 @@
+/*Change the background image of spiritedaway.html*/
+
+/* for the common part of akira.html, spiritedaway.html, yourname.html, paprika.html,
+  visit films_detail.css */
+#banner {
+  background-image: linear-gradient(to bottom, rgba(2, 0, 36, 0) 0%, rgba(0, 0, 0, 0.6) 30%, rgba(0, 0, 0, 1) 100%), url(../image/spiritedaway.jpg);
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}

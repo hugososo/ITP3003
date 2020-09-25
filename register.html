@@ -1,0 +1,144 @@
+<!--
+This page contain form for non members to register the movie club
+-->
+
+<!--Visit register.css and form.js for style of functions of this html-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" type="text/css" href="css/register.css">
+  <link rel="stylesheet" type="text/css" href="css/menu.css">
+  <link rel="stylesheet" type="text/css" href="css/footer.css">
+  <link rel="stylesheet" type="text/css" href="css/scroll.css">
+  <link href="https://fonts.googleapis.com/css?family=Baloo+Chettan+2|Noto+Sans+JP&display=swap" rel="stylesheet">
+  <title>Japanese Animated Movie Club</title>
+  <!--  W3.JS is a JavaScript library designed to simplify web development projects: -->
+  <script src="https://www.w3schools.com/lib/w3.js" type="text/javascript"></script>
+  <script type="text/javascript" src="js/menu.js"></script>
+</head>
+
+<body onresize="resize()" onload="w3.includeHTML();">
+  <div id="flex-container">
+    <div w3-include-html="menu.html"></div>
+    <section>
+      <!--This button allow user to go to top of page when clicked       -->
+      <button id="backToTop" onclick="location.href='#';"><a href="#">&#8682;</a></button>
+
+      <!--      When user click these two headers, the input field "UserID" will be focused-->
+      <h1 class="intro_text" onclick="startform();">Interested in our club?</h1>
+      <h2 class="intro_text" onclick="startform();">Let's Join us for more fun!</h2>
+
+      <!--     When user submit the form, a welcome message will shown up-->
+      <form action="" method="post" enctype="multipart/form-data" name="regform" id="joinclub"
+        onsubmit="hi(); return false;">
+        <div class="header">Membership Registration</div>
+
+        <input type="hidden" name="Region" value="Hong Kong">
+
+        <!--       1st input field, letting user input UserID with length 8 - 30-->
+        <label for="userId">User ID <span class="required">*</span> : </label>
+        <input type="text" required pattern="([\d]+[A-Za-z]+|[A-Za-z]+[\d]+)[A-Za-z\d]*"
+          title="Length from 8 - 30, contains at least 1 letter and 1 number" id="userId" minlength="8" maxlength="30"
+          onchange="checkPattern(this);">
+
+        <!--       Invalid message will shown up when user input invalid ID-->
+        <p id="userIdreminder">Invalid UserID! Should be 8-30 character long, at least 1 letter and 1 number</p> <br>
+
+        <!--        This field let user input password with length 8 - 30-->
+        <label for="pw">Password <span class="required">*</span> : </label>
+        <input type="password" id="pw" required pattern="([\d]+[A-Za-z]+|[A-Za-z]+[\d]+)[A-Za-z\d]*"
+          onchange="checkPattern(this);" minlength="8" maxlength="30"
+          title="Length from 8 - 30, contains at least 1 letter and 1 number">
+
+        <!--          Message will shown up if input is invalid -->
+        <p id="pwreminder">Invalid Password! Should be 8-30 character long, at least 1 letter and 1 number</p> <br>
+
+        <!--        This field let user re-enter password with length 8 - 30-->
+        <label for="rePw">Re-Enter <span class="required">*</span> : </label>
+        <input type="password" id="rePw" required pattern="([\d]+[A-Za-z]+|[A-Za-z]+[\d]+)[A-Za-z\d]*"
+          onchange="checkPattern(this);checkpw();" minlength="8" maxlength="30"
+          title="Length from 8 - 30, contains at least 1 letter and 1 number">
+
+        <!--          Message will shown up if input is invalid-->
+        <p id="rePwreminder">Invalid Password! Should be 8-30 character long, at least 1 letter and 1 number</p>
+
+        <!--      Message will shown up if the re-enter password =/= password-->
+        <p id="isSame">Please type in the same password!</p> <br>
+
+
+        <label for="fName">First Name <span class="required">*</span> : </label> <input type="text" required
+          placeholder="E.G. Tai Ming" id="fName"> <br>
+
+        <label for="lName">Last Name <span class="required">*</span> : </label> <input type="text" required
+          placeholder="E.G. Chan" id="lName"> <br>
+
+        <!--       This let user choose gender with radio button-->
+        <div class="gendercol">
+          <label for="" class="gender">Sex <span class="required">*</span> :
+          </label> <input type="radio" name="sex" id="male" required value="M"> <label for="male"
+            class="gender"><span></span>Male</label>
+          <input type="radio" name="sex" id="female" value="F"> <label for="female" class="gender">
+            <span></span>Female</label>
+        </div>
+
+        <label for="email">Email <span class="required">*</span> : </label>
+        <input type="email" name="email" id="email" required placeholder="E.G. xyz@vtc.com"> <br>
+
+        <label for="phone">Phone <span class="required">*</span> : </label>
+        <input type="tel" name="phone" id="phone" pattern="^\d{8}$" maxlength="8" placeholder="E.G. 1234 5678"><br>
+
+        <!--          This contain list of checkbox for users, it will show up when the button clicked-->
+        <div id="checkbox-container">
+          <div id="collapseCheck" title="Click to show option" onclick="showBox()">
+            Your prefered genre
+          </div>
+          <ul id="checkboxlist">
+            <li><input type="checkbox" id="horror" value="horror"><label for="horror" class="box-label"><span
+                  class="newCheckbox">&#10004;</span> Horror</label></li>
+
+            <li><input type="checkbox" id="shounen" value="shounen"><label for="shounen" class="box-label"><span
+                  class="newCheckbox">&#10004;</span> Shounen</label></li>
+
+            <li><input type="checkbox" id="life" value="life"><label for="life" class="box-label"><span
+                  class="newCheckbox">&#10004;</span> Slice of life</label></li>
+
+            <li><input type="checkbox" id="romance" value="romance"><label for="romance" class="box-label"><span
+                  class="newCheckbox">&#10004;</span> Romance</label></li>
+
+            <li><input type="checkbox" id="psychological" value="psychological"><label for="psychological"
+                class="box-label"><span class="newCheckbox">&#10004;</span> Psychological</label></li>
+
+            <li><input type="checkbox" id="comedy" value="comedy"><label for="comedy" class="box-label"><span
+                  class="newCheckbox">&#10004;</span> Comedy</label></li>
+
+            <li><input type="checkbox" id="Sci-fi" value="Sci-fi"><label for="Sci-fi" class="box-label"><span
+                  class="newCheckbox">&#10004;</span> Sci-fi</label></li>
+
+            <li><input type="checkbox" id="Sport" value="Sport"><label for="Sport" class="box-label"><span
+                  class="newCheckbox">&#10004;</span> Sport</label></li>
+
+            <li><input type="checkbox" id="Shoujo" value="Shoujo"><label for="Shoujo" class="box-label"><span
+                  class="newCheckbox">&#10004;</span> Shoujo</label></li>
+          </ul> <br>
+        </div>
+
+        <div class="button-spacing">
+          <button type="submit"> Submit </button>
+          <button type="reset"> Reset </button>
+        </div>
+      </form>
+
+    </section>
+    <div w3-include-html="footer.html"></div>
+  </div>
+  <script type="text/javascript" src="js/scroll.js">
+  </script>
+  <script type="text/javascript" src="js/form.js">
+  </script>
+</body>
+
+</html>

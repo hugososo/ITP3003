@@ -1,0 +1,659 @@
+/*This css file stylise the common part of akira.html, spiritedaway.html, yourname.html, paprika.html*/
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: 'Baloo Chettan 2', cursive;
+  user-select: none;
+  box-sizing: border-box;
+  color: white;
+}
+
+/*flex-container for menu*/
+#flex-container {
+  display: flex;
+  flex-flow: column;
+}
+
+/*flex-container for .poster-container, .film-heading, .preview*/
+.banner-content {
+  display: flex;
+  position: relative;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.banner-content>div {
+  margin: 0px 30px;
+}
+
+/*store poster image of film*/
+div.poster-container {
+  width: 250px;
+  height: 400px;
+  margin-left: 0px;
+  position: relative;
+  top: 3vh;
+  left: 3vw;
+  order: 0;
+}
+
+/*id for poster image tag*/
+#poster {
+  width: 250px;
+  height: 400px;
+}
+
+/*div to store title, year, genre, rating and purchase site */
+section .film-heading {
+  flex-direction: column;
+  order: 1;
+  color: white;
+  margin-right: 0px;
+}
+
+/*heading class and id for .film-heading */
+
+/*h1 class for film title*/
+.title {
+  display: inline-block;
+  font-size: 5vw;
+  margin: 1vh 0 0 0;
+  height: 6vw;
+}
+
+.film-heading h2 {
+  font-size: 2vw;
+  margin: 5px;
+}
+
+.film-heading h3 {
+  margin: 10px;
+}
+
+.film-heading h3#year {
+  display: inline-block;
+}
+
+/*heading class and id for .film-heading--------------end */
+
+/*class to add padding to clickable element */
+.rating {
+  padding: 0px 5px;
+}
+
+.buy {
+  padding: 10px 5px;
+}
+
+/*class to add padding to clickable element--------end*/
+
+/*class to stylise anchor tag */
+.film-heading a {
+  text-decoration: none;
+  color: white;
+}
+
+/*stylise the span element inside a tag*/
+.film-heading span {
+  border-radius: 5px;
+  margin: 10px 10px;
+  text-align: center;
+  transition: all 0.3s;
+  font-weight: bolder;
+}
+
+.film-heading span:hover {
+  background-color: black;
+  color: white;
+}
+
+/*stylise the span element inside a tag----------end*/
+
+/*the below class stylise the span element of each a tag*/
+.imdb {
+  color: black;
+  background-color: orange;
+}
+
+.rotten {
+  background-color: red;
+  color: yellow;
+}
+
+.apple {
+  width: 50%;
+  background-color: white;
+  color: black;
+  display: inline-block;
+  font-size: 20px;
+}
+
+.amazon {
+  width: 50%;
+  background-color: orange;
+  color: rgb(4, 7, 51);
+  font-size: 20px;
+  display: inline-block;
+}
+
+/*the below class stylise the span element of each a tag----------end*/
+
+/*class to store trailer and image*/
+section .preview {
+  order: 3;
+  width: 40%;
+  margin: 10px 0px 10px 30px;
+}
+
+/*flex container of #image-box, #next, #pre*/
+.img-flex-container {
+  width: 80%;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid grey;
+  margin: 0px 10px
+}
+
+/*gallery of image*/
+#image-box {
+  white-space: nowrap;
+  width: 80%;
+  overflow: hidden;
+}
+
+/*stylise the button of slideshow */
+#next,
+#pre {
+  width: 8%;
+  background-color: rgba(41, 18, 18, 0.81);
+  color: white;
+  vertical-align: middle;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+#next:hover,
+#pre:hover {
+  background-color: rgba(186, 172, 172, 0.81);
+  color: black;
+}
+
+/*stylise the button of slideshow----------end*/
+
+
+/*the background of enlarge image*/
+#cover {
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(41, 30, 30, 0.81);
+  position: fixed;
+  top: 0px;
+  transition: all 1s;
+}
+
+/*id for the image tag that store the enlarge image*/
+#large {
+  width: 70%;
+  max-height: 650px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5vh;
+}
+
+/*stylise cancel button of enlarge image*/
+.cancel {
+  position: absolute;
+  top: 0px;
+  right: 20px;
+  font-size: 60px;
+  line-height: 90px;
+  cursor: pointer;
+  color: white;
+  transition: all 0.3s;
+}
+
+.cancel:hover {
+  color: orange;
+}
+
+/*stylise cancel button of enlarge image-----end*/
+
+/*regular style of image in the gallery*/
+.preview img {
+  width: 150px;
+  margin: 5px;
+  height: 100px;
+}
+
+.preview img:hover {
+  transform: scale(1.3);
+  cursor: pointer;
+}
+
+/*regular style of image in the gallery-------end*/
+
+
+/*stylise the div of introduction and main cast information*/
+#detail-container {
+  margin-top: 5px;
+}
+
+details {
+  color: white;
+}
+
+summary {
+  font-size: 20px;
+  padding-left: 5%;
+  cursor: pointer;
+  margin-bottom: 20px;
+  outline: none;
+}
+
+details>p {
+  font-size: 18px;
+  margin-left: 20px;
+}
+
+/*table to store info on director and main cast*/
+table {
+  color: white;
+  width: 90%;
+  margin: auto;
+}
+
+th {
+  font-size: 30px;
+  width: 50%;
+  background-color: rgba(10, 15, 18, 0.74);
+  border-radius: 3px;
+  padding-left: 5px;
+  text-align: left;
+}
+
+td {
+  text-align: left;
+  font-size: 20px;
+  padding-left: 5px;
+}
+
+/*stylise the div of introduction and main cast information--------end*/
+
+
+/*a div contains the comments and a text editor for commenters*/
+#comment-section {
+  width: 100%;
+  margin-top: 20px;
+}
+
+/*stylise the comment box*/
+.write {
+  display: block;
+  width: 90%;
+  margin: auto;
+}
+
+/*stylise the comment section*/
+#browse-comment {
+  display: block;
+  width: 90%;
+  margin: auto;
+  color: white;
+}
+
+/*The below 3 classes stylise the comments in the  comment section*/
+
+/*stylise the author by adding "by" before name*/
+.author::before {
+  content: "By ";
+  color: yellow;
+}
+
+.review-title {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.review {
+  margin: 10px 0px 0px 0px;
+  border: 1px solid grey;
+  padding: 5px 5px 5px 10px;
+}
+
+/*end*/
+
+/* the below 3 id is the same with the above 3 class,
+ but contain comment by the current user, and is invisible */
+#invisible {
+  display: none;
+  margin: 10px 0px 0px 0px;
+  border: 1px solid grey;
+  padding: 5px 5px 5px 10px;
+}
+
+#authorA::before {
+  content: "By ";
+  color: yellow;
+}
+
+#review-titleA {
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/*end*/
+
+/*stylise input field of Name and Title*/
+input[type="text"] {
+  background-color: rgba(0, 0, 0, 0.007);
+  outline: none;
+  border: none;
+  border-bottom: 1px dashed grey;
+  padding: 3px;
+  color: white;
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+input[type="text"]:focus,
+input[type="text"]:hover {
+  border-bottom: 1px solid grey;
+}
+
+/*stylise input field of Name and Title*/
+
+/*class contains input field of Name and Title*/
+.review_info {
+  display: flex;
+  flex-direction: column;
+  width: 50%;
+  margin: auto;
+}
+
+.review_info label {
+  margin-top: 10px;
+}
+
+/*class contains input field of Name and Title-----------end*/
+
+/*class contains textarea and submit button*/
+.textblock {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+
+.textblock button {
+  font-family: 'Baloo Chettan 2', cursive;
+  height: 35px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 12pt;
+  font-weight: bold;
+  padding: 0 5px;
+  border: none;
+  transition: all 0.2s;
+}
+
+.textblock button:hover {
+  background-color: orange;
+  color: white;
+}
+
+/*class contains textarea and submit button-----------end*/
+
+/*id to stylise textare*/
+#comment {
+  width: 80%;
+  height: 25vh;
+  font-size: 20px;
+  font-family: 'Baloo Chettan 2', cursive;
+  background-color: rgba(0, 0, 0, 0.007);
+  color: white;
+  outline: none;
+  transition: all 0.3s;
+  margin-top: 15px;
+  margin-left: 10px;
+  margin-right: 10px;
+  overflow-y: scroll;
+  resize: none;
+}
+
+#comment:focus {
+  box-shadow: none;
+  font-size: 20px;
+}
+
+/*id to stylise textare-------end*/
+
+
+/*contains button to stylise text in textarea*/
+#editor-container {
+  width: 80%;
+  margin: auto;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  border-radius: 5px;
+}
+
+/*stylise the button in the text editor*/
+#editor-container button,
+select,
+input[type="color"] {
+  width: 10%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  font-family: 'Baloo Chettan 2', cursive;
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  font-size: 13pt;
+  font-weight: bold;
+  margin: 0 5px 0px 5px;
+  outline: none;
+}
+
+input[type="color"] {
+  padding: 6px 0px;
+  height: 19px;
+}
+
+#editor-container button:hover,
+select:hover,
+input[type="color"]:hover {
+  color: rgb(255, 136, 0);
+}
+
+#editor-container button#left {
+  text-align: left;
+  padding-left: 1vw;
+}
+
+#editor-container button#right {
+  text-align: right;
+  padding-right: 20px;
+}
+
+#editor-container button#bold {
+  font-size: 13pt;
+  padding-top: 3px;
+}
+
+/*stylise the button in the text editor----------end*/
+
+
+/*break point 1, size of different section changes, and the poster shift position*/
+@media only screen and (max-width: 960px) {
+  .banner-content {
+    flex-wrap: wrap;
+    justify-content: flex-start
+  }
+
+  section .film-heading {
+    order: 0;
+    width: 45%;
+  }
+
+  .title {
+    font-size: 10vw;
+  }
+
+  section .film-heading h2 {
+    margin: 0px;
+    font-size: 4vw;
+  }
+
+  section .film-heading h3 {
+    margin: 5px 10px;
+    font-size: 2.5vw;
+  }
+
+  span.apple,
+  span.amazon {
+    margin: 5px;
+    padding: 5px;
+    font-size: 2.5vw;
+  }
+
+  div.poster-container {
+    order: 1;
+    width: 45%;
+    height: 70%;
+    top: 2vh;
+    right: 1vw;
+    margin: 0 0 20px 0;
+  }
+
+  #poster {
+    width: 100%;
+    height: 100%;
+  }
+
+  section div.preview {
+    width: 100%;
+    display: block;
+    margin: 10px 0 10px 40px;
+  }
+
+  .img-flex-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid grey;
+    margin: auto;
+  }
+
+  #browse-comment {
+    width: 90%;
+  }
+
+  #large {
+    width: 80%;
+    margin-top: 25%;
+  }
+}
+
+/*break point 2 , size of different section changes, poster photo and film heading shift position*/
+@media only screen and (max-width: 620px) {
+  .banner-content {
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  section .film-heading {
+    order: 1;
+    width: 90%;
+    display: block;
+    text-align: center;
+  }
+
+  .title {
+    font-size: 12vw;
+  }
+
+  section .film-heading h2 {
+    font-size: 8vw;
+  }
+
+  section .film-heading h3 {
+    font-size: 5vw;
+  }
+
+  span.apple,
+  span.amazon {
+    font-size: 4vw;
+  }
+
+  div.poster-container {
+    order: 0;
+    display: block;
+    width: 60%;
+    height: 100%;
+  }
+
+  img#poster {
+    width: 100%;
+  }
+
+  section div.preview {
+    width: 90%;
+    display: block;
+    margin: 10px 0 10px 20px;
+  }
+
+  .img-flex-container {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid grey;
+    margin: auto;
+  }
+
+  #comment-section {
+    flex-wrap: wrap-reverse;
+  }
+
+  #browse-comment {
+    width: 100%;
+    color: white;
+  }
+
+  .write {
+    margin: auto;
+    width: 99%;
+  }
+
+  #editor-container button,
+  select,
+  input[type="color"] {
+    width: 13%;
+    font-size: 10pt;
+    margin: 0;
+  }
+
+  #editor-container button#center {
+    margin: 0;
+    padding: 0;
+  }
+
+  #large {
+    width: 90%;
+    margin-top: 60%;
+  }
+
+}
